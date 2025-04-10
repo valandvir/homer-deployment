@@ -69,7 +69,7 @@ Contributing
 Feel free to submit issues or pull requests to improve this deployment setup.
 
 License
-This project is licensed under the MIT License - see the  file for details (if applicable, add a license file to the repository).
+This project is licensed under the MIT License.
 
 Acknowledgments
 Based on the official homer7-docker repository: https://github.com/sipcapture/homer7-docker.
