@@ -82,3 +82,4 @@ echo "🔹 Starting services..."
 docker compose up -d
 
 echo "✅ Deployment completed! Check status with: docker compose ps"
+
