@@ -212,7 +212,7 @@ services:
       - CAP_NET_ADMIN
       - CAP_NET_RAW
     command:
-      ./heplify -e -hs ${HOMER_DST}:9060 -m SIPRTCP -i ${ERSPAN_INT} -zf -l info -erspan
+      ./heplify -e -hs ${HOMER_DST}:9060 -m SIPRTCP -i ${CAPTURE_INTERFACE} -zf -l info -erspan
     network_mode: host
     restart: unless-stopped
 
