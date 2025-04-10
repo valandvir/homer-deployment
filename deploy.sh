@@ -81,5 +81,10 @@ echo "HOMER_DST=127.0.0.1" >> .env
 echo "🔹 Starting services..."
 docker compose up -d
 
+# === 7. Clean up: Remove homer-deployment directory ===
+echo "🔹 Cleaning up: Removing homer-deployment directory..."
+cd /opt/homer/homer7-docker/heplify-server/hom7-prom-all
+rm -rf /home/$(whoami)/homer-deployment
+
 echo "✅ Deployment completed! Check status with: docker compose ps"
 
