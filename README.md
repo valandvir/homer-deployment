@@ -16,14 +16,16 @@ Follow these steps to deploy HOMER and its associated services on a production s
    git clone https://github.com/valandvir/homer-deployment.git
    
 2. Navigate to the directory:
-
 cd homer-deployment
-Make the deployment script executable:
 
+3. Make the deployment script executable:
 sudo chmod +x deploy.sh
-Run the deployment script:
+
+4. Run the deployment script:
 sudo ./deploy.sh
+
 When prompted, enter the name of the CAPTURE interface (e.g., ens192) or press Enter to use the default value (ens192).
+
 The script will:
 Install Docker and the Docker Compose plugin if not already present.
 Create the required directory structure (/opt/homer/).
@@ -32,19 +34,22 @@ Download the homer7-docker repository.
 Copy modified configuration files from this repository.
 Set up environment variables in .env.
 Start all services using Docker Compose.
+
 Verification
 After the deployment script completes, verify the setup:
 
-Check the generated .env file:
+1. Check the generated .env file:
 cat /opt/homer/homer7-docker/heplify-server/hom7-prom-all/.env
+
 Expected output:
 CAPTURE_INTERFACE=ens192
 SERVER_HOSTNAME=<your_FQDN>
 HOMER_DST=127.0.0.1
 <your_FQDN> will be the fully qualified domain name of your server (e.g., prod.example.com), automatically determined by hostname -f.
 
-Verify that services are running:
+2. Verify that services are running:
 sudo docker compose ps
+
 This should list all services (e.g., heplify, nginx, homer-webapp, etc.) with a status of Up.
 
 Repository Contents
