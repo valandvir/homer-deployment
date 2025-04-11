@@ -96,8 +96,9 @@ The homer-deployment directory is automatically removed after deployment; subseq
 ## Troubleshooting
 If you encounter errors like $'\r': command not found, ensure the script uses LF line endings (run dos2unix deploy.sh or recreate it on Linux).
 If services fail to start, check logs with sudo docker logs <container_name> (e.g., sudo docker logs heplify).
-Contributing
-Feel free to submit issues or pull requests to improve this deployment setup.
+```
+- **Docker permission denied after deployment**: If you see `permission denied` when running `docker compose ps` without `sudo`, it may mean your user was added to the `docker` group during deployment. Log out and log back in to apply the group changes, then retry the command.
+```
 
 ## Contributing
 Feel free to submit issues or pull requests to enhance this deployment setup.
