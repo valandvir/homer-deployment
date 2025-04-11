@@ -41,17 +41,21 @@ Start all services using Docker Compose.
 ## Verification
 After the deployment script completes, verify the setup:
 
-1. Check the generated .env file:
-cat /opt/homer/homer7-docker/heplify-server/hom7-prom-all/.env
+1. **Check the generated .env file:**
+   ```bash
+   cat /opt/homer/homer7-docker/heplify-server/hom7-prom-all/.env
 
 Expected output:
+```
 CAPTURE_INTERFACE=ens192
 SERVER_HOSTNAME=<your_FQDN>
 HOMER_DST=127.0.0.1
 <your_FQDN> will be the fully qualified domain name of your server (e.g., prod.example.com), automatically determined by hostname -f.
+```
 
-2. Verify that services are running:
-sudo docker compose ps
+2. **Verify that services are running:**
+   ```bash
+   sudo docker compose ps
 
 This should list all services (e.g., heplify, nginx, homer-webapp, etc.) with a status of Up.
 
