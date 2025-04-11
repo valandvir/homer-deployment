@@ -28,8 +28,8 @@ systemctl restart docker
 if [ -n "$SUDO_USER" ] && ! groups "$SUDO_USER" | grep -q '\bdocker\b'; then
     echo "🔹 Adding user $SUDO_USER to docker group..."
     usermod -aG docker "$SUDO_USER"
-    echo "🔹 Group changes applied. Please log out and log back in to apply them to your session."
-    echo "🔹 Alternatively, run 'newgrp docker' in your current session to continue without relogging."
+    echo "🔹 User $SUDO_USER added to docker group. To apply changes, log out and log back in, then re-run './deploy.sh' to continue deployment."
+    echo "🔹 Alternatively, run 'newgrp docker' in this session and then re-run './deploy.sh' to proceed without logging out."
     exit 0
 fi
 
