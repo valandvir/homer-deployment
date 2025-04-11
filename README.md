@@ -15,14 +15,17 @@ Follow these steps to deploy HOMER and its associated services on a production s
    ```bash
    git clone https://github.com/valandvir/homer-deployment.git
    
-2. Navigate to the directory:
-cd homer-deployment
+2. **Navigate to the directory:**
+   ```bash
+   cd homer-deployment
 
-3. Make the deployment script executable:
-sudo chmod +x deploy.sh
-
-4. Run the deployment script:
-sudo ./deploy.sh
+4. **Make the deployment script executable:**
+   ```bash
+   sudo chmod +x deploy.sh
+   
+5. **Run the deployment script:**
+   ```bash
+   sudo ./deploy.sh
 
 When prompted, enter the name of the CAPTURE interface (e.g., ens192) or press Enter to use the default value (ens192).
 
