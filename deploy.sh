@@ -24,12 +24,13 @@ echo "🔹 Checking and starting Docker..."
 systemctl enable --now docker
 systemctl restart docker
 
-# Check Docker group
+# Check Docker group and apply changes immediately
 if ! groups $(whoami) | grep -q '\bdocker\b'; then
     echo "🔹 Adding user to docker group..."
     usermod -aG docker $(whoami)
-    echo "⚠️ Please log out and log back in, then re-run the script!"
-    exit 1
+    echo "🔹 Applying group changes to current session..."
+    sg docker -c "$0" "$@"
+    exit 0
 fi
 
 # Verify docker compose plugin
