@@ -102,9 +102,6 @@ Feel free to submit issues or pull requests to improve this deployment setup.
 ## Contributing
 Feel free to submit issues or pull requests to enhance this deployment setup.
 
-### License
-This project is licensed under the MIT License.
-
 ### Acknowledgments
 Based on the official homer7-docker repository: https://github.com/sipcapture/homer7-docker.
 Thanks to the HOMER community for providing a robust SIP capture solution.
