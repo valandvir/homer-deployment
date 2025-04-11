@@ -60,7 +60,10 @@ HOMER_DST=127.0.0.1
 2. **Verify that services are running:**
    ```bash
    cd /opt/homer/homer7-docker/heplify-server/hom7-prom-all/
-   sudo docker compose ps
+   ```
+   ```bash
+   docker compose ps
+   ```
 
 * Run this command from /opt/homer/homer7-docker/heplify-server/hom7-prom-all/ (since homer-deployment is deleted).
 * Expected output: A list of services (e.g., heplify, nginx, homer-webapp, etc.) with a status of Up.
