@@ -27,16 +27,19 @@ Follow these steps to deploy HOMER and its associated services on a production s
    ```bash
    sudo ./deploy.sh
 
-When prompted, enter the name of the CAPTURE interface (e.g., ens192) or press Enter to use the default value (ens192).
+* When prompted, enter the name of the CAPTURE interface (e.g., ens192) or press Enter to use the default value (ens192).
 
-The script will:
-Install Docker and the Docker Compose plugin if not already present.
-Create the required directory structure (/opt/homer/).
-Generate self-signed SSL certificates for NGINX.
-Download the homer7-docker repository.
-Copy modified configuration files from this repository.
-Set up environment variables in .env.
-Start all services using Docker Compose.
+* The script will:
+
+   * Install Docker and the Docker Compose plugin if not already present.
+   * Create the required directory structure (/opt/homer/).
+   * Generate self-signed SSL certificates for NGINX.
+   * Download the homer7-docker repository.
+   * Copy modified configuration files from this repository.
+   * Set up environment variables in .env.
+   * Start all services using Docker Compose.
+* Note: If the script adds your user to the docker group, you’ll need to log out and log back in for the changes to take effect, allowing you to run docker commands without sudo.
+
 
 ## Verification
 After the deployment script completes, verify the setup:
