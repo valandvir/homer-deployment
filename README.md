@@ -84,7 +84,6 @@ monitor session 1 type erspan-source
 ```
 Replace <heplify_server_ip> with the IP address of your server running Heplify (e.g., the IP bound to ens192).
 Replace <cube_ip> with the IP address of your Cisco CUBE.
-Replace <next_hop_ip> with the IP of the next hop router or gateway to reach the Heplify server.
 This configuration mirrors SIP traffic from the specified interface to the Heplify agent over ERSPAN.
 
 ## Notes
