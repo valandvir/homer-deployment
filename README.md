@@ -1,6 +1,6 @@
 # HOMER with Heplify for Cisco CUBE ERSPAN SIP Capture
 
-This repository contains the configuration and deployment script for setting up HOMER 7.7 with additional services (Grafana, Prometheus, Loki, NGINX as a reverse proxy, and Heplify as a HEP capture agent) using Docker Compose. The deployment is fully automated via a single script, making it easy to deploy on a production server with minimal manual effort.
+This repository provides a configuration and deployment script for setting up **HOMER 7.7** with additional services, including Grafana, Prometheus, Loki, NGINX as a reverse proxy, and Heplify as a HEP capture agent, all orchestrated via Docker Compose. This assembly was specifically designed to collect SIP traffic from Cisco CUBE voice gateways using ERSPAN, enabling detailed analysis and monitoring of VoIP communications. The deployment is fully automated through a single script, enabling easy setup on a production server with minimal manual intervention.
 
 ## Prerequisites
 
