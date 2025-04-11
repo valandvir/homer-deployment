@@ -85,18 +85,17 @@ docker compose up -d
 # === 7. Clean up: Remove homer-deployment directory ===
 echo "🔹 Cleaning up: Removing homer-deployment directory..."
 cd /opt/homer/homer7-docker/heplify-server/hom7-prom-all
-# Use dirname to get the directory of the script itself
-SCRIPT_DIR=$(dirname "$(realpath "$0")")
-if [ -d "$SCRIPT_DIR" ] && [ "$SCRIPT_DIR" != "/" ]; then
-    rm -rf "$SCRIPT_DIR"
-    echo "🔹 Removed $SCRIPT_DIR"
-else
-    echo "⚠️ Could not remove $SCRIPT_DIR (directory not found or invalid path)"
-fi
-# Fallback to ORIGINAL_DIR if different
-if [ "$SCRIPT_DIR" != "$ORIGINAL_DIR" ] && [ -d "$ORIGINAL_DIR" ] && [ "$ORIGINAL_DIR" != "/" ]; then
+# Remove only the original homer-deployment directory
+if [ -d "$ORIGINAL_DIR" ] && [ "$ORIGINAL_DIR" != "/" ] && [ "$ORIGINAL_DIR" != "/opt/homer/homer7-docker/heplify-server/hom7-prom-all" ]; then
     rm -rf "$ORIGINAL_DIR"
     echo "🔹 Removed $ORIGINAL_DIR"
+else
+    echo "⚠️ Could not remove $ORIGINAL_DIR (directory not found, invalid path, or protected directory)"
+fi
+# Additional check for /home/$SUDO_USER/homer-deployment
+if [ -n "$SUDO_USER" ] && [ -d "/home/$SUDO_USER/homer-deployment" ]; then
+    rm -rf "/home/$SUDO_USER/homer-deployment"
+    echo "🔹 Removed /home/$SUDO_USER/homer-deployment"
 fi
 # Additional check for /home/$SUDO_USER/homer-deployment
 if [ -n "$SUDO_USER" ] && [ -d "/home/$SUDO_USER/homer-deployment" ]; then
